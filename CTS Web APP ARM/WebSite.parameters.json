@@ -10,6 +10,15 @@
     },
     "Deploy WebsitePackageFileName": {
       "value": "package.zip"
+    },
+    "_artifactsLocation": {
+      "value": ""
+    },
+    "skuName": {
+      "value": "F1"
+    },
+    "skuCapacity": {
+      "value": 1
     }
   }
 }

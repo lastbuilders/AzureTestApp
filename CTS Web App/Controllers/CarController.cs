@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using System.Xml.Linq;
 
 namespace CTS_Web_App.Controllers
@@ -21,6 +22,14 @@ namespace CTS_Web_App.Controllers
             IEnumerable<Car> cars = LoadCars(element);
 
             return View(cars);
+        }
+
+        [HttpPost]
+        // GET: Applications/Create
+        public ActionResult logOff()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index");
         }
 
 

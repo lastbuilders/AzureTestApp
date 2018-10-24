@@ -4,12 +4,6 @@
   "parameters": {
     "hostingPlanName": {
       "value": "CTSTestWebAPP"
-    },
-    "DeployWebSitePackageFolder": {
-      "value": "CTS Web App"
-    },
-    "DeployWebSitePackageFileName": {
-      "value": "package.zip"
     }
   }
 }

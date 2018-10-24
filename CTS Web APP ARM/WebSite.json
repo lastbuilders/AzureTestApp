@@ -34,31 +34,10 @@
       "metadata": {
         "description": "Describes plan's instance count"
       }
-    },
-    "_artifactsLocation": {
-      "type": "string"
-    },
-    "_artifactsLocationSasToken": {
-      "type": "securestring"
-    },
-    "DeployWebSitePackageFolder": {
-      "type": "string",
-      "minLength": 1,
-      "metadata": {
-        "description": "WebDeploy package location. This path is relative to the _artifactsLocation parameter"
-      }
-    },
-    "DeployWebSitePackageFileName": {
-      "type": "string",
-      "minLength": 1,
-      "metadata": {
-        "description": "Name of the webdeploy package"
-      }
     }
   },
   "variables": {
-    "webSiteName": "[concat('webSite', uniqueString(resourceGroup().id))]",
-    "TestDeploymentName": "[concat('TestDeployment', uniqueString(resourceGroup().id))]"
+    "webSiteName": "[concat('webSite', uniqueString(resourceGroup().id))]"
   },
   "resources": [
     {
@@ -94,26 +73,7 @@
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
       },
       "resources": [
-        {
-          "name": "MSDeploy",
-          "type": "extensions",
-          "location": "[resourceGroup().location]",
-          "apiVersion": "2015-08-01",
-          "dependsOn": [
-            "[resourceId('Microsoft.Web/sites', variables('webSiteName'))]"
-          ],
-          "tags": {
-            "displayName": "DeployWebSite"
-          },
-          "properties": {
-            "packageUri": "[concat(parameters('_artifactsLocation'), '/', parameters('DeployWebSitePackageFolder'), '/', parameters('DeployWebSitePackageFileName'), parameters('_artifactsLocationSasToken'))]",
-            "dbType": "None",
-            "connectionString": "",
-            "setParameters": {
-              "IIS Web Application Name": "[variables('webSiteName')]"
-            }
-          }
-        }
+        
       ]
     },
     {

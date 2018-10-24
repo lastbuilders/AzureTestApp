@@ -5,10 +5,10 @@
     "hostingPlanName": {
       "value": "CTSTestWebAPP"
     },
-    "Deploy WebsitePackageFolder": {
+    "DeployWebsitePackageFolder": {
       "value": "CTS Web App"
     },
-    "Deploy WebsitePackageFileName": {
+    "DeployWebsitePackageFileName": {
       "value": "package.zip"
     },
     "_artifactsLocation": {
